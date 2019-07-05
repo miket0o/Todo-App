@@ -31,3 +31,22 @@
     transform: rotate(360deg);
   }
 }
+
+.formContainer{
+  text-align: center;
+}
+
+.todoList{
+  text-decoration: none;
+  list-style: none;
+}
+
+.todoList li{
+  background: #61dafb;
+  padding: 20px;
+  margin: 10px;
+}
+
+.todoList li:hover{
+  cursor: pointer;
+}
