@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 class AddTodo extends Component {
     state = {
         text: '',
-        update: false
     }
 
     handleChange(e){
@@ -28,21 +27,6 @@ class AddTodo extends Component {
         }
         
         e.preventDefault();
-    }
-
-    shouldComponentUpdate(nextProps, nextState){
-        if(nextState.update === true){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    componentDidUpdate(){
-        this.setState({
-            update: false
-        });
     }
 
     render() {
