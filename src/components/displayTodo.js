@@ -19,7 +19,6 @@ class DisplayTodo extends Component {
 
     render() {
         let todos = this.props.todos.map(item => {
-            console.log(item.dateCreated.getTime())
             return (
                 <li key={item.id}>
                     <span className="toggleDone" onClick={(e) => this.handleClick(e, item.id)}>Toggle</span>

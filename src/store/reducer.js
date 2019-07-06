@@ -4,13 +4,10 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     if(action.type === "ADD_TODO"){
-        console.log("To do added");
-        console.log(`Value: ${action.val}`);
         const toPush = {
             todo: action.val, 
             id: Math.random(), 
-            completed: false,
-            dateCreated: new Date()
+            completed: false
         };
 
         return{
@@ -35,7 +32,6 @@ const reducer = (state = initialState, action) => {
                 else{
                     el.completed = true;
                 }
-                console.log(el);
             }
         })
     }
