@@ -6,10 +6,16 @@ const reducer = (state = initialState, action) => {
     if(action.type === "ADD_TODO"){
         console.log("To do added");
         console.log(`Value: ${action.val}`);
+        const toPush = {
+            todo: action.val, 
+            id: Math.random(), 
+            completed: false,
+            dateCreated: new Date()
+        };
+
         return{
             ...state,
-            todos: state.todos.concat({todo: action.val, id: Math.random(), completed: false}),
-            id: state.id + 1
+            todos: [toPush ,...state.todos]
         }
     }
 
