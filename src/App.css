@@ -45,8 +45,22 @@
   background: #61dafb;
   padding: 20px;
   margin: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.todoList li:hover{
+.todoList li span{
+  padding: 15px;
+}
+
+.removeButton:hover{
   cursor: pointer;
+}
+
+.toggleDone:hover{
+  cursor: pointer;
+}
+
+.completed{
+  text-decoration: line-through;
 }

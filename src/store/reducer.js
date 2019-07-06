@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
         console.log(`Value: ${action.val}`);
         return{
             ...state,
-            todos: state.todos.concat({todo: action.val, id: Math.random()}),
+            todos: state.todos.concat({todo: action.val, id: Math.random(), completed: false}),
             id: state.id + 1
         }
     }
@@ -18,6 +18,20 @@ const reducer = (state = initialState, action) => {
             ...state,
             todos: state.todos.filter(el => el.id !== action.key)
         }
+    }
+
+    if(action.type === "TOGGLE_TODO"){
+        state.todos.forEach(el =>{
+            if(el.id === action.key){
+                if(el.completed){
+                    el.completed = false;
+                }
+                else{
+                    el.completed = true;
+                }
+                console.log(el);
+            }
+        })
     }
 
     return state;
